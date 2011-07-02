@@ -14,7 +14,10 @@ namespace Program
 
         private void YeniUrunEkle_Load(object sender, EventArgs e)
         {
-            comboBoxMiktarBirimi.Items.Clear();
+            comboBoxMiktarBirimId.Items.Clear();
+
+            comboBoxMiktarBirimId.DisplayMember = "Ad";
+            comboBoxMiktarBirimId.ValueMember = "Id";
 
             MiktarBirimleriTablosu miktarBirimleriTablosu = new MiktarBirimleriTablosu();
 
@@ -24,13 +27,43 @@ namespace Program
 
                 foreach (MiktarBirimi miktarBirimi in miktarBirimleri)
                 {
-                    comboBoxMiktarBirimi.Items.Add(miktarBirimi.Ad);
+                    comboBoxMiktarBirimId.Items.Add(miktarBirimi);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void buttonKaydet_Click(object sender, EventArgs e)
+        {
+            Urun urun = new Urun();
+
+            try
+            {
+                urun.Ad = textBoxAd.Text;
+                urun.Miktar = Convert.ToInt32(numericUpDownMiktar.Value);
+                urun.MiktarBirimId = ((MiktarBirimi)(comboBoxMiktarBirimId.SelectedItem)).Id;
+                urun.Aciklama = textBoxAciklama.Text;
+
+                UrunlerTablosu urunlerTablosu = new UrunlerTablosu();
+
+                urunlerTablosu.Ekle1(urun);
+
+                MessageBox.Show("Yeni ürün eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void numericUpDownMiktar_Enter(object sender, EventArgs e)
+        {
+            numericUpDownMiktar.Select(0, numericUpDownMiktar.Value.ToString().Length);
         }
     }
 }
