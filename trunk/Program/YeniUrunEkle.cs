@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Collections;
 using SVTLib;
+using Microsoft.VisualBasic;
 
 namespace Program
 {
@@ -12,12 +13,12 @@ namespace Program
             InitializeComponent();
         }
 
-        private void YeniUrunEkle_Load(object sender, EventArgs e)
+        private void MiktarBirimleriniGuncelle()
         {
             comboBoxMiktarBirimId.Items.Clear();
 
-            comboBoxMiktarBirimId.DisplayMember = "Ad";
-            comboBoxMiktarBirimId.ValueMember = "Id";
+            comboBoxMiktarBirimId.DisplayMember = MiktarBirimi.AD;
+            comboBoxMiktarBirimId.ValueMember = MiktarBirimi.ID;
 
             MiktarBirimleriTablosu miktarBirimleriTablosu = new MiktarBirimleriTablosu();
 
@@ -34,6 +35,11 @@ namespace Program
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void YeniUrunEkle_Load(object sender, EventArgs e)
+        {
+            MiktarBirimleriniGuncelle();
         }
 
         private void buttonKaydet_Click(object sender, EventArgs e)
@@ -64,6 +70,21 @@ namespace Program
         private void numericUpDownMiktar_Enter(object sender, EventArgs e)
         {
             numericUpDownMiktar.Select(0, numericUpDownMiktar.Value.ToString().Length);
+        }
+
+        private void buttonYeniBirimTanimla_Click(object sender, EventArgs e)
+        {
+            MiktarBirimi miktarBirimi = new MiktarBirimi();
+
+            miktarBirimi.Ad = Interaction.InputBox("Birim adını giriniz", "Yeni Birim");
+
+            if (!String.IsNullOrEmpty(miktarBirimi.Ad))
+            {
+                MiktarBirimleriTablosu miktarBirimleriTablosu = new MiktarBirimleriTablosu();
+                miktarBirimleriTablosu.Ekle1(miktarBirimi);
+
+                MiktarBirimleriniGuncelle();
+            }
         }
     }
 }
