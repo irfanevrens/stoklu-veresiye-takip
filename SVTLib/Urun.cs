@@ -7,7 +7,7 @@ namespace SVTLib
 {
     public class Urun
     {
-        private int id;
+        private int id = 0;
         private string ad;
         private int miktar;
         private int miktar_birim_id;
