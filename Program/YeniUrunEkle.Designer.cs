@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonSifirla = new System.Windows.Forms.Button();
             this.buttonKaydet = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonYeniBirimTanimla = new System.Windows.Forms.Button();
             this.textBoxAciklama = new System.Windows.Forms.TextBox();
             this.comboBoxMiktarBirimId = new System.Windows.Forms.ComboBox();
             this.textBoxAd = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.groupBox1.Controls.Add(this.numericUpDownMiktar);
             this.groupBox1.Controls.Add(this.buttonSifirla);
             this.groupBox1.Controls.Add(this.buttonKaydet);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.buttonYeniBirimTanimla);
             this.groupBox1.Controls.Add(this.textBoxAciklama);
             this.groupBox1.Controls.Add(this.comboBoxMiktarBirimId);
             this.groupBox1.Controls.Add(this.textBoxAd);
@@ -94,14 +94,15 @@
             this.buttonKaydet.UseVisualStyleBackColor = true;
             this.buttonKaydet.Click += new System.EventHandler(this.buttonKaydet_Click);
             // 
-            // button1
+            // buttonYeniBirimTanimla
             // 
-            this.button1.Location = new System.Drawing.Point(372, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 26);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Yeni Birim Tanımla";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonYeniBirimTanimla.Location = new System.Drawing.Point(372, 48);
+            this.buttonYeniBirimTanimla.Name = "buttonYeniBirimTanimla";
+            this.buttonYeniBirimTanimla.Size = new System.Drawing.Size(177, 26);
+            this.buttonYeniBirimTanimla.TabIndex = 8;
+            this.buttonYeniBirimTanimla.Text = "Yeni Birim Tanımla";
+            this.buttonYeniBirimTanimla.UseVisualStyleBackColor = true;
+            this.buttonYeniBirimTanimla.Click += new System.EventHandler(this.buttonYeniBirimTanimla_Click);
             // 
             // textBoxAciklama
             // 
@@ -202,7 +203,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonYeniBirimTanimla;
         private System.Windows.Forms.Button buttonSifirla;
         private System.Windows.Forms.Button buttonKaydet;
         private System.Windows.Forms.NumericUpDown numericUpDownMiktar;

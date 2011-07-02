@@ -7,8 +7,16 @@ namespace SVTLib
 {
     public class MiktarBirimi
     {
+        public const string ID = "id";
+        public const string AD = "ad";
+
         private int id;
         private string ad;
+
+        public MiktarBirimi()
+        { 
+            
+        }
 
         public MiktarBirimi(int id, string ad)
         {
@@ -24,6 +32,7 @@ namespace SVTLib
         public string Ad
         {
             get { return ad; }
+            set { ad = value.Trim(); }
         }
     }
 }

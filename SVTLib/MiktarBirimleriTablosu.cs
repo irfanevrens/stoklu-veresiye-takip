@@ -52,5 +52,31 @@ namespace SVTLib
 
             return arrayList;
         }
+
+        public void Ekle1(MiktarBirimi miktarBirimi)
+        {
+            SQLiteConnection conn = new SQLiteConnection();
+
+            conn.ConnectionString = @"Data Source=veritabani.db3";
+
+            string selectSQL = "INSERT INTO miktar_birimleri (ad) VALUES ('" + miktarBirimi.Ad + "')";
+
+            SQLiteCommand command = new SQLiteCommand(selectSQL, conn);
+
+            try
+            {
+                conn.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
