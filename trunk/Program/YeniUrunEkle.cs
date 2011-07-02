@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using System.Collections;
+using SVTLib;
 
 namespace Program
 {
@@ -16,9 +12,25 @@ namespace Program
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void YeniUrunEkle_Load(object sender, EventArgs e)
         {
+            comboBoxMiktarBirimi.Items.Clear();
 
+            MiktarBirimleriTablosu miktarBirimleriTablosu = new MiktarBirimleriTablosu();
+
+            try
+            {
+                ArrayList miktarBirimleri = miktarBirimleriTablosu.GetListe1();
+
+                foreach (MiktarBirimi miktarBirimi in miktarBirimleri)
+                {
+                    comboBoxMiktarBirimi.Items.Add(miktarBirimi.Ad);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
