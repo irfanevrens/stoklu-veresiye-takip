@@ -36,7 +36,7 @@ namespace SVTLib
 
                 while (reader.Read())
                 {
-                    arrayList.Add(new MiktarBirimi(Convert.ToInt32(reader["id"]), reader["ad"].ToString()));
+                    arrayList.Add(new MiktarBirimi(reader.GetInt32(0), reader.GetString(1)));
                 }
 
                 reader.Close();

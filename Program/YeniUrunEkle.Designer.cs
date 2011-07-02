@@ -30,17 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSifirla = new System.Windows.Forms.Button();
+            this.buttonKaydet = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBoxMiktarBirimi = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAciklama = new System.Windows.Forms.TextBox();
+            this.comboBoxMiktarBirimId = new System.Windows.Forms.ComboBox();
+            this.textBoxAd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDownMiktar = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMiktar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,13 +57,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.numericUpDownMiktar);
+            this.groupBox1.Controls.Add(this.buttonSifirla);
+            this.groupBox1.Controls.Add(this.buttonKaydet);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.comboBoxMiktarBirimi);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxAciklama);
+            this.groupBox1.Controls.Add(this.comboBoxMiktarBirimId);
+            this.groupBox1.Controls.Add(this.textBoxAd);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -74,65 +75,59 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // button3
+            // buttonSifirla
             // 
-            this.button3.Location = new System.Drawing.Point(266, 282);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 27);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Formu Sıfırla";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonSifirla.Location = new System.Drawing.Point(266, 282);
+            this.buttonSifirla.Name = "buttonSifirla";
+            this.buttonSifirla.Size = new System.Drawing.Size(110, 27);
+            this.buttonSifirla.TabIndex = 5;
+            this.buttonSifirla.Text = "Formu Sıfırla";
+            this.buttonSifirla.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonKaydet
             // 
-            this.button2.Location = new System.Drawing.Point(125, 282);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 27);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Kaydet";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonKaydet.Location = new System.Drawing.Point(125, 282);
+            this.buttonKaydet.Name = "buttonKaydet";
+            this.buttonKaydet.Size = new System.Drawing.Size(135, 27);
+            this.buttonKaydet.TabIndex = 4;
+            this.buttonKaydet.Text = "Kaydet";
+            this.buttonKaydet.UseVisualStyleBackColor = true;
+            this.buttonKaydet.Click += new System.EventHandler(this.buttonKaydet_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(372, 48);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 26);
+            this.button1.Size = new System.Drawing.Size(177, 26);
             this.button1.TabIndex = 8;
             this.button1.Text = "Yeni Birim Tanımla";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // textBoxAciklama
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 81);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(424, 195);
-            this.textBox3.TabIndex = 7;
+            this.textBoxAciklama.Location = new System.Drawing.Point(125, 81);
+            this.textBoxAciklama.Multiline = true;
+            this.textBoxAciklama.Name = "textBoxAciklama";
+            this.textBoxAciklama.Size = new System.Drawing.Size(424, 195);
+            this.textBoxAciklama.TabIndex = 3;
             // 
-            // comboBoxMiktarBirimi
+            // comboBoxMiktarBirimId
             // 
-            this.comboBoxMiktarBirimi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.comboBoxMiktarBirimi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxMiktarBirimi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMiktarBirimi.FormattingEnabled = true;
-            this.comboBoxMiktarBirimi.Location = new System.Drawing.Point(280, 49);
-            this.comboBoxMiktarBirimi.Name = "comboBoxMiktarBirimi";
-            this.comboBoxMiktarBirimi.Size = new System.Drawing.Size(86, 26);
-            this.comboBoxMiktarBirimi.TabIndex = 6;
+            this.comboBoxMiktarBirimId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBoxMiktarBirimId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxMiktarBirimId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMiktarBirimId.FormattingEnabled = true;
+            this.comboBoxMiktarBirimId.Location = new System.Drawing.Point(230, 49);
+            this.comboBoxMiktarBirimId.Name = "comboBoxMiktarBirimId";
+            this.comboBoxMiktarBirimId.Size = new System.Drawing.Size(136, 26);
+            this.comboBoxMiktarBirimId.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxAd
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 23);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(125, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 23);
-            this.textBox1.TabIndex = 4;
+            this.textBoxAd.Location = new System.Drawing.Point(125, 20);
+            this.textBoxAd.Name = "textBoxAd";
+            this.textBoxAd.Size = new System.Drawing.Size(241, 23);
+            this.textBoxAd.TabIndex = 0;
             // 
             // label5
             // 
@@ -162,6 +157,21 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ürün Adı";
             // 
+            // numericUpDownMiktar
+            // 
+            this.numericUpDownMiktar.Location = new System.Drawing.Point(125, 50);
+            this.numericUpDownMiktar.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDownMiktar.Name = "numericUpDownMiktar";
+            this.numericUpDownMiktar.Size = new System.Drawing.Size(99, 23);
+            this.numericUpDownMiktar.TabIndex = 1;
+            this.numericUpDownMiktar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownMiktar.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDownMiktar.Enter += new System.EventHandler(this.numericUpDownMiktar_Enter);
+            // 
             // YeniUrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -176,6 +186,7 @@
             this.Load += new System.EventHandler(this.YeniUrunEkle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMiktar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,15 +196,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBoxMiktarBirimi;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAciklama;
+        private System.Windows.Forms.ComboBox comboBoxMiktarBirimId;
+        private System.Windows.Forms.TextBox textBoxAd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSifirla;
+        private System.Windows.Forms.Button buttonKaydet;
+        private System.Windows.Forms.NumericUpDown numericUpDownMiktar;
     }
 }
