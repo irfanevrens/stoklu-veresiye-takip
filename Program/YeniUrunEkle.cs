@@ -50,7 +50,7 @@ namespace Program
             {
                 urun.Ad = textBoxAd.Text;
                 urun.Miktar = Convert.ToInt32(numericUpDownMiktar.Value);
-                urun.MiktarBirimId = ((MiktarBirimi)(comboBoxMiktarBirimId.SelectedItem)).Id;
+                urun.MiktarBirimi.Id = ((MiktarBirimi)(comboBoxMiktarBirimId.SelectedItem)).Id;
                 urun.Aciklama = textBoxAciklama.Text;
 
                 UrunlerTablosu urunlerTablosu = new UrunlerTablosu();

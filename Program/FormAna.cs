@@ -23,5 +23,12 @@ namespace Program
 
             yeniUrunEkle.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UrunListesi urunListesi = new UrunListesi();
+
+            urunListesi.Show();
+        }
     }
 }
