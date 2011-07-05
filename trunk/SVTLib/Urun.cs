@@ -10,8 +10,23 @@ namespace SVTLib
         private int id = 0;
         private string ad;
         private int miktar;
-        private int miktar_birim_id;
+        private MiktarBirimi miktarBirimi;
         private string aciklama;
+
+        public Urun(int id, string ad, int miktar, string aciklama, string miktar_birim_ad, int miktar_birim_id)
+        {
+            this.id = id;
+            Ad = ad;
+            Miktar = miktar;
+            Aciklama = aciklama;
+
+            miktarBirimi = new MiktarBirimi(miktar_birim_id, miktar_birim_ad);
+        }
+
+        public Urun()
+        {
+            // TODO: Complete member initialization
+        }
 
         public int Id
         {
@@ -30,10 +45,9 @@ namespace SVTLib
             set { miktar = value; }
         }
 
-        public int MiktarBirimId
+        public MiktarBirimi MiktarBirimi
         {
-            get { return miktar_birim_id; }
-            set { miktar_birim_id = value; }
+            get { return miktarBirimi; }
         }
 
         public string Aciklama

@@ -27,6 +27,7 @@ namespace SVTLib
         public int Id
         {
             get { return id; }
+            set { id = value; }
         }
 
         public string Ad
