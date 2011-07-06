@@ -25,12 +25,13 @@ namespace SVTLib
 
         public Urun()
         {
-            // TODO: Complete member initialization
+            miktarBirimi = new MiktarBirimi();
         }
 
         public int Id
         {
             get { return id; }
+            set { id = value; }
         }
 
         public string Ad

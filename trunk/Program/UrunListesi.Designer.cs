@@ -33,6 +33,7 @@
             this.tBAramaYap = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bUrunSil = new System.Windows.Forms.Button();
+            this.bUrunDetayi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGWUrunListesi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,19 +94,31 @@
             this.bUrunSil.UseVisualStyleBackColor = true;
             this.bUrunSil.Click += new System.EventHandler(this.bUrunSil_Click);
             // 
+            // bUrunDetayi
+            // 
+            this.bUrunDetayi.Location = new System.Drawing.Point(133, 413);
+            this.bUrunDetayi.Name = "bUrunDetayi";
+            this.bUrunDetayi.Size = new System.Drawing.Size(115, 23);
+            this.bUrunDetayi.TabIndex = 5;
+            this.bUrunDetayi.Text = "ÜRÜN DETAYI";
+            this.bUrunDetayi.UseVisualStyleBackColor = true;
+            this.bUrunDetayi.Click += new System.EventHandler(this.bUrunDetayi_Click);
+            // 
             // UrunListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 533);
+            this.Controls.Add(this.bUrunDetayi);
             this.Controls.Add(this.bUrunSil);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tBAramaYap);
             this.Controls.Add(this.dGWUrunListesi);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UrunListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UrunListesi";
             this.Load += new System.EventHandler(this.UrunListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGWUrunListesi)).EndInit();
@@ -121,5 +134,6 @@
         private System.Windows.Forms.TextBox tBAramaYap;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bUrunSil;
+        private System.Windows.Forms.Button bUrunDetayi;
     }
 }

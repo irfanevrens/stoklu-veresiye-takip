@@ -20,6 +20,11 @@ namespace Program
 
         private void UrunListesi_Load(object sender, EventArgs e)
         {
+            UrunListesiniGuncelle();
+        }
+
+        public void UrunListesiniGuncelle()
+        {
             UrunlerTablosu urunlerTablosu = new UrunlerTablosu();
 
             ArrayList urunler = urunlerTablosu.GetListe1();
@@ -38,8 +43,6 @@ namespace Program
             dGWUrunListesi.DataSource = table;
 
             dGWUrunListesi.Columns[0].Visible = false;
-
-            // ((DataTable)this.dGWUrunListesi.DataSource).DefaultView.RowFilter = "Name LIKE '%jo%'";
         }
 
         private void tBAramaYap_TextChanged(object sender, EventArgs e)
@@ -73,6 +76,26 @@ namespace Program
                 {
                     dGWUrunListesi.Rows.RemoveAt(Convert.ToInt32(silinecekIndexs[i]));
                 }
+            }
+        }
+
+        private void bUrunDetayi_Click(object sender, EventArgs e)
+        {
+            UrunDetay urunDetay = new UrunDetay();
+
+            urunDetay.urunListesiFormu = this;
+
+            try
+            {
+                if (dGWUrunListesi.SelectedRows.Count != 1) throw new Exception("Lütfen listeden bir adet ürün seçiniz.");
+
+                urunDetay.Id = Convert.ToInt32(dGWUrunListesi.SelectedRows[0].Cells[0].Value);
+
+                urunDetay.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

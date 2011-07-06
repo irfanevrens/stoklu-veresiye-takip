@@ -121,5 +121,68 @@ namespace SVTLib
                 conn.Close();
             }
         }
+
+        public Urun getDetay1(int id)
+        {
+            SQLiteConnection conn = new SQLiteConnection();
+            conn.ConnectionString = @"Data Source=veritabani.db3";
+            
+            string selectSQL =
+"SELECT " +
+  "urunler.id, " +
+  "urunler.ad, " +
+  "urunler.miktar, " +
+  "urunler.aciklama, " +
+  "miktar_birimleri.ad AS miktar_birim_ad, " +
+  "urunler.miktar_birim_id " +
+"FROM " +
+  "urunler " +
+  "INNER JOIN miktar_birimleri ON (urunler.miktar_birim_id = miktar_birimleri.id) " +
+"WHERE urunler.id = " + id.ToString();
+
+            SQLiteCommand command = new SQLiteCommand(selectSQL, conn);
+
+            SQLiteDataReader reader;
+
+            Urun urun = new Urun();
+
+            try
+            {
+                conn.Open();
+
+                reader = command.ExecuteReader();
+
+                if (reader.HasRows == false) throw new Exception("Kayıt bulunamadı.");
+
+                int satirSayisi = 0;
+
+                while (reader.Read())
+                {
+                    satirSayisi++;
+
+                    urun.Id = reader.GetInt32(0);
+                    urun.Ad = reader.GetString(1);
+                    urun.Miktar = reader.GetInt32(2);
+                    urun.Aciklama = reader.GetString(3);
+
+                    urun.MiktarBirimi.Ad = reader.GetString(4);
+                    urun.MiktarBirimi.Id = reader.GetInt32(5);
+                }
+
+                if (satirSayisi != 1) throw new Exception("Sistemsel bir hata meydana geldi. Lütfen program üreticisi ile irtibata geçiniz. Adet: " + reader.RecordsAffected.ToString() + ", Id: " + id.ToString());
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return urun;
+        }
     }
 }
