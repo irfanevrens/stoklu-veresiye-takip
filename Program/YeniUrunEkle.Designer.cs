@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownMiktar = new System.Windows.Forms.NumericUpDown();
             this.buttonSifirla = new System.Windows.Forms.Button();
             this.buttonKaydet = new System.Windows.Forms.Button();
             this.buttonYeniBirimTanimla = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDownMiktar = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMiktar)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +74,21 @@
             this.groupBox1.Size = new System.Drawing.Size(556, 316);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // numericUpDownMiktar
+            // 
+            this.numericUpDownMiktar.Location = new System.Drawing.Point(125, 50);
+            this.numericUpDownMiktar.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDownMiktar.Name = "numericUpDownMiktar";
+            this.numericUpDownMiktar.Size = new System.Drawing.Size(99, 23);
+            this.numericUpDownMiktar.TabIndex = 1;
+            this.numericUpDownMiktar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownMiktar.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDownMiktar.Enter += new System.EventHandler(this.numericUpDownMiktar_Enter);
             // 
             // buttonSifirla
             // 
@@ -158,21 +173,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ürün Adı";
             // 
-            // numericUpDownMiktar
-            // 
-            this.numericUpDownMiktar.Location = new System.Drawing.Point(125, 50);
-            this.numericUpDownMiktar.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.numericUpDownMiktar.Name = "numericUpDownMiktar";
-            this.numericUpDownMiktar.Size = new System.Drawing.Size(99, 23);
-            this.numericUpDownMiktar.TabIndex = 1;
-            this.numericUpDownMiktar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDownMiktar.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
-            this.numericUpDownMiktar.Enter += new System.EventHandler(this.numericUpDownMiktar_Enter);
-            // 
             // YeniUrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -183,6 +183,7 @@
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "YeniUrunEkle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YeniUrunEkle";
             this.Load += new System.EventHandler(this.YeniUrunEkle_Load);
             this.groupBox1.ResumeLayout(false);
