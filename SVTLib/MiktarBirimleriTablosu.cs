@@ -9,6 +9,8 @@ namespace SVTLib
 {
     public class MiktarBirimleriTablosu
     {
+        private string connString = @"Data Source=veritabani.db3";
+
         /// <summary>
         /// Yeni Ürün Eklerken ürün miktarı için seçilmesi gereken
         /// birim vardır. Bu birim seçilirken combobox kullanılıyordu
@@ -18,7 +20,7 @@ namespace SVTLib
         public ArrayList GetListe1()
         {
             SQLiteConnection conn = new SQLiteConnection();
-            conn.ConnectionString = @"Data Source=veritabani.db3";
+            conn.ConnectionString = connString;
 
             string selectSQL = "SELECT * FROM miktar_birimleri ORDER BY ad ASC";
 
@@ -57,7 +59,7 @@ namespace SVTLib
         {
             SQLiteConnection conn = new SQLiteConnection();
 
-            conn.ConnectionString = @"Data Source=veritabani.db3";
+            conn.ConnectionString = connString;
 
             string selectSQL = "INSERT INTO miktar_birimleri (ad) VALUES ('" + miktarBirimi.Ad + "')";
 

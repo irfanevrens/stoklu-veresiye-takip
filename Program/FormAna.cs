@@ -21,6 +21,9 @@ namespace Program
         {
             YeniUrunEkle yeniUrunEkle = new YeniUrunEkle();
 
+            yeniUrunEkle.Text = "Ürün Ekle";
+            yeniUrunEkle.lFormBaslik.Text = yeniUrunEkle.Text;
+
             yeniUrunEkle.Show();
         }
 

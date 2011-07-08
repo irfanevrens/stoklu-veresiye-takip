@@ -10,6 +10,8 @@ namespace SVTLib
 {
     public class UrunlerTablosu
     {
+        private string connString = @"Data Source=veritabani.db3";
+
         /// <summary>
         /// Yeni ürün eklemek için kullanılır. Yeni ürün ekleme 
         /// formundan alınan bilgiler bu fonksiyona verilir ve 
@@ -20,10 +22,9 @@ namespace SVTLib
             if (urun.Ad.Length == 0) throw new Exception("Ürün adı boş geçilemez.");
 
             SQLiteConnection conn = new SQLiteConnection();
+            conn.ConnectionString = connString;
 
-            conn.ConnectionString = @"Data Source=veritabani.db3";
-
-            string selectSQL = "INSERT INTO urunler (ad, miktar, miktar_birim_id, aciklama) VALUES ('" + urun.Ad + "', " + urun.Miktar + ", " + urun.MiktarBirimi.Id + ", '" + urun.Aciklama + "')";
+            string selectSQL = string.Format("INSERT INTO urunler (ad, miktar, miktar_birim_id, aciklama) VALUES ('{0}', {1}, {2}, '{3}')", urun.Ad.Replace("'", "''"), urun.Miktar, urun.MiktarBirimi.Id, urun.Aciklama.Replace("'", "''")); 
 
             SQLiteCommand command = new SQLiteCommand(selectSQL, conn);
 
@@ -50,7 +51,7 @@ namespace SVTLib
         public ArrayList GetListe1()
         {
             SQLiteConnection conn = new SQLiteConnection();
-            conn.ConnectionString = @"Data Source=veritabani.db3";
+            conn.ConnectionString = connString;
 
             string selectSQL =  
 "SELECT " +
@@ -100,7 +101,7 @@ namespace SVTLib
         public void UrunSilById(int urun_id)
         {
             SQLiteConnection conn = new SQLiteConnection();
-            conn.ConnectionString = @"Data Source=veritabani.db3";
+            conn.ConnectionString = connString;
 
             string deleteSQL = "DELETE FROM urunler WHERE id = " + urun_id;
 
@@ -125,7 +126,7 @@ namespace SVTLib
         public Urun getDetay1(int id)
         {
             SQLiteConnection conn = new SQLiteConnection();
-            conn.ConnectionString = @"Data Source=veritabani.db3";
+            conn.ConnectionString = connString;
             
             string selectSQL =
 "SELECT " +
@@ -183,6 +184,34 @@ namespace SVTLib
             }
 
             return urun;
+        }
+
+        public void Guncelle1(Urun urun)
+        {
+            if (urun.Id == 0) throw new Exception("Ürün Id bilgisi tanımsız.");
+            if (urun.Ad.Length == 0) throw new Exception("Ürün adı boş geçilemez.");
+
+            SQLiteConnection conn = new SQLiteConnection();
+            conn.ConnectionString = connString;
+
+            string selectSQL = string.Format("UPDATE urunler SET ad = '{0}', miktar = {1}, miktar_birim_id = {2}, aciklama = '{3}' WHERE id = {4}", urun.Ad.Replace("'", "''"), urun.Miktar, urun.MiktarBirimi.Id, urun.Aciklama.Replace("'", "''"), urun.Id);
+
+            SQLiteCommand command = new SQLiteCommand(selectSQL, conn);
+
+            try
+            {
+                conn.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

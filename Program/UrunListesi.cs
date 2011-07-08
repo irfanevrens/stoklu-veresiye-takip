@@ -95,8 +95,36 @@ namespace Program
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HataMesajiGoster(ex.Message);
             }
+        }
+
+        private void bUrunDuzenle_Click(object sender, EventArgs e)
+        {
+            YeniUrunEkle yeniUrunEkle = new YeniUrunEkle();
+
+            yeniUrunEkle.UrunListesiFormu = this;
+
+            yeniUrunEkle.Text = "Ürün Düzenle";
+            yeniUrunEkle.lFormBaslik.Text = yeniUrunEkle.Text;
+
+            try
+            {
+                if (dGWUrunListesi.SelectedRows.Count != 1) throw new Exception("Lütfen listeden bir adet ürün seçiniz.");
+
+                yeniUrunEkle.UrunId = Convert.ToInt32(dGWUrunListesi.SelectedRows[0].Cells[0].Value);
+
+                yeniUrunEkle.Show();
+            }
+            catch (Exception ex)
+            {
+                HataMesajiGoster(ex.Message);
+            }
+        }
+
+        private void HataMesajiGoster(string hataMesaji)
+        {
+            MessageBox.Show(hataMesaji, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

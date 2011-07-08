@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bUrunSil = new System.Windows.Forms.Button();
             this.bUrunDetayi = new System.Windows.Forms.Button();
+            this.bUrunDuzenle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGWUrunListesi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +89,7 @@
             // 
             this.bUrunSil.Location = new System.Drawing.Point(12, 413);
             this.bUrunSil.Name = "bUrunSil";
-            this.bUrunSil.Size = new System.Drawing.Size(115, 23);
+            this.bUrunSil.Size = new System.Drawing.Size(115, 31);
             this.bUrunSil.TabIndex = 4;
             this.bUrunSil.Text = "SEÇİLENLERİ SİL";
             this.bUrunSil.UseVisualStyleBackColor = true;
@@ -98,17 +99,28 @@
             // 
             this.bUrunDetayi.Location = new System.Drawing.Point(133, 413);
             this.bUrunDetayi.Name = "bUrunDetayi";
-            this.bUrunDetayi.Size = new System.Drawing.Size(115, 23);
+            this.bUrunDetayi.Size = new System.Drawing.Size(115, 31);
             this.bUrunDetayi.TabIndex = 5;
             this.bUrunDetayi.Text = "ÜRÜN DETAYI";
             this.bUrunDetayi.UseVisualStyleBackColor = true;
             this.bUrunDetayi.Click += new System.EventHandler(this.bUrunDetayi_Click);
+            // 
+            // bUrunDuzenle
+            // 
+            this.bUrunDuzenle.Location = new System.Drawing.Point(254, 413);
+            this.bUrunDuzenle.Name = "bUrunDuzenle";
+            this.bUrunDuzenle.Size = new System.Drawing.Size(115, 31);
+            this.bUrunDuzenle.TabIndex = 6;
+            this.bUrunDuzenle.Text = "ÜRÜN DÜZENLE";
+            this.bUrunDuzenle.UseVisualStyleBackColor = true;
+            this.bUrunDuzenle.Click += new System.EventHandler(this.bUrunDuzenle_Click);
             // 
             // UrunListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 533);
+            this.Controls.Add(this.bUrunDuzenle);
             this.Controls.Add(this.bUrunDetayi);
             this.Controls.Add(this.bUrunSil);
             this.Controls.Add(this.label2);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bUrunSil;
         private System.Windows.Forms.Button bUrunDetayi;
+        private System.Windows.Forms.Button bUrunDuzenle;
     }
 }
