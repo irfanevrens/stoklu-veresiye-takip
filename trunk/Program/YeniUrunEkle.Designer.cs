@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lFormBaslik = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numericUpDownMiktar = new System.Windows.Forms.NumericUpDown();
-            this.buttonSifirla = new System.Windows.Forms.Button();
+            this.bSifirla = new System.Windows.Forms.Button();
             this.buttonKaydet = new System.Windows.Forms.Button();
             this.buttonYeniBirimTanimla = new System.Windows.Forms.Button();
             this.textBoxAciklama = new System.Windows.Forms.TextBox();
@@ -44,21 +44,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMiktar)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lFormBaslik
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(13, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "YENİ ÜRÜN EKLEME";
+            this.lFormBaslik.AutoSize = true;
+            this.lFormBaslik.Font = new System.Drawing.Font("Trebuchet MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lFormBaslik.Location = new System.Drawing.Point(13, 29);
+            this.lFormBaslik.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lFormBaslik.Name = "lFormBaslik";
+            this.lFormBaslik.Size = new System.Drawing.Size(306, 40);
+            this.lFormBaslik.TabIndex = 0;
+            this.lFormBaslik.Text = "YENİ ÜRÜN EKLEME";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.numericUpDownMiktar);
-            this.groupBox1.Controls.Add(this.buttonSifirla);
+            this.groupBox1.Controls.Add(this.bSifirla);
             this.groupBox1.Controls.Add(this.buttonKaydet);
             this.groupBox1.Controls.Add(this.buttonYeniBirimTanimla);
             this.groupBox1.Controls.Add(this.textBoxAciklama);
@@ -90,14 +90,15 @@
             this.numericUpDownMiktar.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.numericUpDownMiktar.Enter += new System.EventHandler(this.numericUpDownMiktar_Enter);
             // 
-            // buttonSifirla
+            // bSifirla
             // 
-            this.buttonSifirla.Location = new System.Drawing.Point(266, 282);
-            this.buttonSifirla.Name = "buttonSifirla";
-            this.buttonSifirla.Size = new System.Drawing.Size(110, 27);
-            this.buttonSifirla.TabIndex = 5;
-            this.buttonSifirla.Text = "Formu Sıfırla";
-            this.buttonSifirla.UseVisualStyleBackColor = true;
+            this.bSifirla.Location = new System.Drawing.Point(266, 282);
+            this.bSifirla.Name = "bSifirla";
+            this.bSifirla.Size = new System.Drawing.Size(110, 27);
+            this.bSifirla.TabIndex = 5;
+            this.bSifirla.Text = "Formu Sıfırla";
+            this.bSifirla.UseVisualStyleBackColor = true;
+            this.bSifirla.Click += new System.EventHandler(this.bSifirla_Click);
             // 
             // buttonKaydet
             // 
@@ -179,7 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 398);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lFormBaslik);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "YeniUrunEkle";
@@ -196,7 +197,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxAciklama;
         private System.Windows.Forms.ComboBox comboBoxMiktarBirimId;
@@ -205,8 +205,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonYeniBirimTanimla;
-        private System.Windows.Forms.Button buttonSifirla;
+        private System.Windows.Forms.Button bSifirla;
         private System.Windows.Forms.Button buttonKaydet;
         private System.Windows.Forms.NumericUpDown numericUpDownMiktar;
+        public System.Windows.Forms.Label lFormBaslik;
     }
 }
