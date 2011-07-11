@@ -33,5 +33,12 @@ namespace Program
 
             urunListesi.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MiktarBirimListesi miktarBirimleriListesi = new MiktarBirimListesi();
+
+            miktarBirimleriListesi.Show();
+        }
     }
 }
