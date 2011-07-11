@@ -61,9 +61,60 @@ namespace SVTLib
 
             conn.ConnectionString = connString;
 
-            string selectSQL = "INSERT INTO miktar_birimleri (ad) VALUES ('" + miktarBirimi.Ad + "')";
+            string insertSQL = string.Format("INSERT INTO miktar_birimleri (ad) VALUES ('{0}')", miktarBirimi.Ad.Replace("'", "''"));
 
-            SQLiteCommand command = new SQLiteCommand(selectSQL, conn);
+            SQLiteCommand command = new SQLiteCommand(insertSQL, conn);
+
+            try
+            {
+                conn.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void GuncelleAdiById(string yeniBirimAdi, int birimId)
+        {
+            SQLiteConnection conn = new SQLiteConnection();
+
+            conn.ConnectionString = connString;
+
+            string updateSQL = string.Format("UPDATE miktar_birimleri SET ad = '{0}' WHERE id = {1}", yeniBirimAdi.Replace("'", "''"), birimId);
+
+            SQLiteCommand command = new SQLiteCommand(updateSQL, conn);
+
+            try
+            {
+                conn.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void SilById(int aktifBirimId)
+        {
+            SQLiteConnection conn = new SQLiteConnection();
+            conn.ConnectionString = connString;
+
+            string deleteSQL = "DELETE FROM miktar_birimleri WHERE id = " + aktifBirimId;
+
+            SQLiteCommand command = new SQLiteCommand(deleteSQL, conn);
 
             try
             {

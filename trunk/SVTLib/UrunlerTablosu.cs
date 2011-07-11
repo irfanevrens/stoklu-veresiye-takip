@@ -213,5 +213,65 @@ namespace SVTLib
                 conn.Close();
             }
         }
+
+        public bool IsVarWhereMiktarBirimId(int aktifBirimId)
+        {
+            SQLiteConnection conn = new SQLiteConnection();
+            conn.ConnectionString = connString;
+
+            string selectSQL = String.Format(
+"SELECT " +
+  "COUNT(*) AS adet " +
+"FROM " +
+  "urunler " +
+"WHERE urunler.miktar_birim_id = {0}", aktifBirimId);
+
+            SQLiteCommand command = new SQLiteCommand(selectSQL, conn);
+
+            SQLiteDataReader reader;
+
+            Urun urun = new Urun();
+
+            bool sonuc = false;
+            int adet = 0;
+
+            try
+            {
+                conn.Open();
+
+                reader = command.ExecuteReader();
+
+                if (reader.HasRows == false) throw new Exception("Sistemsel hata, program üreticisi ile görüşünüz.");
+
+                int satirSayisi = 0;
+
+                while (reader.Read())
+                {
+                    satirSayisi++;
+
+                    adet = reader.GetInt32(0);
+                }
+
+                if (satirSayisi != 1) throw new Exception("Sistemsel bir hata meydana geldi. Lütfen program üreticisi ile irtibata geçiniz. Adet: " + reader.RecordsAffected.ToString());
+
+                if (satirSayisi == 1)
+                    if (adet == 0)
+                        sonuc = false;
+                    else
+                        sonuc = true;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return sonuc;
+        }
     }
 }
