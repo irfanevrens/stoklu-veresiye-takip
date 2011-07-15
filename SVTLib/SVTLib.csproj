@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ayarlar.cs" />
+    <Compile Include="Musteri.cs" />
+    <Compile Include="MusterilerTablosu.cs" />
     <Compile Include="MiktarBirimi.cs" />
     <Compile Include="MiktarBirimleriTablosu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

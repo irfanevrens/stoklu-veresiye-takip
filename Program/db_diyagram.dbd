@@ -1,0 +1,42 @@
+<XMLDiagram>
+  <TDBADiagramController Locked="0">
+    <Elements>
+      <TDBADiagramObject id="1" propertiesclass="TDiagramMetaTableProperties" objectname="musteriler">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="10" top="10" width="180" height="170"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="2" propertiesclass="TDiagramMetaTableProperties" objectname="veresiyeler">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="10" top="190" width="200" height="111"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="3" propertiesclass="TDiagramMetaTableProperties" objectname="odemeler">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="340" top="20" width="200" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="4" propertiesclass="TDiagramMetaTableProperties" objectname="miktar_birimleri">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="350" top="180" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="5" propertiesclass="TDiagramMetaTableProperties" objectname="urunler">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="350" top="300" width="200" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+    </Elements>
+    <Surface zoom="100" scrollx="0" scrolly="0"/>
+  </TDBADiagramController>
+</XMLDiagram>
