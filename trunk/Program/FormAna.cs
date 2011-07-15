@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using SVTLib;
+using System.Collections;
 
 namespace Program
 {
@@ -39,6 +41,32 @@ namespace Program
             MiktarBirimListesi miktarBirimleriListesi = new MiktarBirimListesi();
 
             miktarBirimleriListesi.Show();
+        }
+
+        private void FormAna_Load(object sender, EventArgs e)
+        {
+            MusterilerTablosu musterilerTablosu = new MusterilerTablosu();
+
+            ArrayList musteriler = musterilerTablosu.GetListe1();
+
+            DataTable table = new DataTable();
+
+            table.Columns.Add("Id", typeof(int));
+            table.Columns.Add("ADI", typeof(string));
+
+            foreach (Musteri musteri in musteriler)
+            {
+                table.Rows.Add(musteri.Id, musteri.Adi);
+            }
+
+            dGWMusteriListesi.DataSource = table;
+
+            dGWMusteriListesi.Columns[0].Visible = false;
+        }
+
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
