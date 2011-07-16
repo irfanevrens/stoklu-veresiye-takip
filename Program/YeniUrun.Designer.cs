@@ -1,6 +1,6 @@
 ﻿namespace Program
 {
-    partial class YeniUrunEkle
+    partial class YeniUrun
     {
         /// <summary>
         /// Required designer variable.
@@ -174,7 +174,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ürün Adı";
             // 
-            // YeniUrunEkle
+            // YeniUrun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +183,7 @@
             this.Controls.Add(this.lFormBaslik);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "YeniUrunEkle";
+            this.Name = "YeniUrun";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YeniUrunEkle";
             this.Load += new System.EventHandler(this.YeniUrunEkle_Load);
