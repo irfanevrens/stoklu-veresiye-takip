@@ -37,16 +37,20 @@
             this.yeniMüşteriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bYeniMusteri = new System.Windows.Forms.Button();
+            this.tBAra = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bMusteriSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGWMusteriListesi)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(190, 367);
+            this.button1.Location = new System.Drawing.Point(184, 434);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 32);
+            this.button1.Size = new System.Drawing.Size(163, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "Yeni Ürün Ekle";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,10 +58,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 367);
+            this.button2.Location = new System.Drawing.Point(13, 434);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 32);
+            this.button2.Size = new System.Drawing.Size(163, 27);
             this.button2.TabIndex = 1;
             this.button2.Text = "Ürün Listesi";
             this.button2.UseVisualStyleBackColor = true;
@@ -65,10 +69,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(362, 367);
+            this.button3.Location = new System.Drawing.Point(355, 434);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 32);
+            this.button3.Size = new System.Drawing.Size(187, 27);
             this.button3.TabIndex = 2;
             this.button3.Text = "Miktar Birimleri Listesi";
             this.button3.UseVisualStyleBackColor = true;
@@ -83,14 +87,14 @@
             this.dGWMusteriListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGWMusteriListesi.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGWMusteriListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGWMusteriListesi.Location = new System.Drawing.Point(17, 53);
+            this.dGWMusteriListesi.Location = new System.Drawing.Point(13, 87);
             this.dGWMusteriListesi.Margin = new System.Windows.Forms.Padding(4);
             this.dGWMusteriListesi.Name = "dGWMusteriListesi";
             this.dGWMusteriListesi.ReadOnly = true;
             this.dGWMusteriListesi.RowHeadersVisible = false;
             this.dGWMusteriListesi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dGWMusteriListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGWMusteriListesi.Size = new System.Drawing.Size(508, 306);
+            this.dGWMusteriListesi.Size = new System.Drawing.Size(529, 258);
             this.dGWMusteriListesi.TabIndex = 3;
             // 
             // menuStrip1
@@ -116,34 +120,79 @@
             // yeniMüşteriToolStripMenuItem
             // 
             this.yeniMüşteriToolStripMenuItem.Name = "yeniMüşteriToolStripMenuItem";
-            this.yeniMüşteriToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.yeniMüşteriToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.yeniMüşteriToolStripMenuItem.Text = "Yeni Müşteri";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
+            // 
+            // bYeniMusteri
+            // 
+            this.bYeniMusteri.Location = new System.Drawing.Point(13, 353);
+            this.bYeniMusteri.Margin = new System.Windows.Forms.Padding(4);
+            this.bYeniMusteri.Name = "bYeniMusteri";
+            this.bYeniMusteri.Size = new System.Drawing.Size(163, 27);
+            this.bYeniMusteri.TabIndex = 5;
+            this.bYeniMusteri.Text = "Yeni Müşteri";
+            this.bYeniMusteri.UseVisualStyleBackColor = true;
+            this.bYeniMusteri.Click += new System.EventHandler(this.bYeniMusteri_Click);
+            // 
+            // tBAra
+            // 
+            this.tBAra.Location = new System.Drawing.Point(355, 57);
+            this.tBAra.Name = "tBAra";
+            this.tBAra.Size = new System.Drawing.Size(187, 23);
+            this.tBAra.TabIndex = 6;
+            this.tBAra.TextChanged += new System.EventHandler(this.tBAra_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(315, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 18);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Ara:";
+            // 
+            // bMusteriSil
+            // 
+            this.bMusteriSil.Location = new System.Drawing.Point(184, 353);
+            this.bMusteriSil.Margin = new System.Windows.Forms.Padding(4);
+            this.bMusteriSil.Name = "bMusteriSil";
+            this.bMusteriSil.Size = new System.Drawing.Size(163, 27);
+            this.bMusteriSil.TabIndex = 8;
+            this.bMusteriSil.Text = "Müşteri Sil";
+            this.bMusteriSil.UseVisualStyleBackColor = true;
+            this.bMusteriSil.Click += new System.EventHandler(this.bMusteriSil_Click);
             // 
             // FormAna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 454);
+            this.ClientSize = new System.Drawing.Size(555, 474);
+            this.Controls.Add(this.bMusteriSil);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tBAra);
+            this.Controls.Add(this.bYeniMusteri);
             this.Controls.Add(this.dGWMusteriListesi);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FormAna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -167,6 +216,10 @@
         private System.Windows.Forms.ToolStripMenuItem yeniMüşteriToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
+        private System.Windows.Forms.Button bYeniMusteri;
+        private System.Windows.Forms.TextBox tBAra;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bMusteriSil;
     }
 }
 

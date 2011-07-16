@@ -101,20 +101,20 @@ namespace Program
 
         private void bUrunDuzenle_Click(object sender, EventArgs e)
         {
-            YeniUrunEkle yeniUrunEkle = new YeniUrunEkle();
+            YeniUrun yeniUrun = new YeniUrun();
 
-            yeniUrunEkle.UrunListesiFormu = this;
+            yeniUrun.UrunListesiFormu = this;
 
-            yeniUrunEkle.Text = "Ürün Düzenle";
-            yeniUrunEkle.lFormBaslik.Text = yeniUrunEkle.Text;
+            yeniUrun.Text = "Ürün Düzenle";
+            yeniUrun.lFormBaslik.Text = yeniUrun.Text;
 
             try
             {
                 if (dGWUrunListesi.SelectedRows.Count != 1) throw new Exception("Lütfen listeden bir adet ürün seçiniz.");
 
-                yeniUrunEkle.UrunId = Convert.ToInt32(dGWUrunListesi.SelectedRows[0].Cells[0].Value);
+                yeniUrun.UrunId = Convert.ToInt32(dGWUrunListesi.SelectedRows[0].Cells[0].Value);
 
-                yeniUrunEkle.Show();
+                yeniUrun.Show();
             }
             catch (Exception ex)
             {

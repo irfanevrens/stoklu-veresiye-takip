@@ -6,13 +6,13 @@ using Microsoft.VisualBasic;
 
 namespace Program
 {
-    public partial class YeniUrunEkle : Form
+    public partial class YeniUrun : Form
     {
         private int urunId = 0;
 
         public UrunListesi UrunListesiFormu;
 
-        public YeniUrunEkle()
+        public YeniUrun()
         {
             InitializeComponent();
         }
