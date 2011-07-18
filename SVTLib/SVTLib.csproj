@@ -50,6 +50,7 @@
     <Compile Include="MiktarBirimi.cs" />
     <Compile Include="MiktarBirimleriTablosu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TahsilatlarTablosu.cs" />
     <Compile Include="Urun.cs" />
     <Compile Include="UrunlerTablosu.cs" />
     <Compile Include="VeresiyelerTablosu.cs" />

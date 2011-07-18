@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dGWMusteriListesi = new System.Windows.Forms.DataGridView();
@@ -37,31 +36,21 @@
             this.yeniMüşteriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bYeniMusteri = new System.Windows.Forms.Button();
             this.tBAra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bMusteriSil = new System.Windows.Forms.Button();
+            this.bYeniMusteri = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGWMusteriListesi)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(184, 434);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Yeni Ürün Ekle";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(13, 434);
+            this.button2.Location = new System.Drawing.Point(13, 427);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 27);
+            this.button2.Size = new System.Drawing.Size(163, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "Ürün Listesi";
             this.button2.UseVisualStyleBackColor = true;
@@ -69,10 +58,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(355, 434);
+            this.button3.Location = new System.Drawing.Point(355, 427);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 27);
+            this.button3.Size = new System.Drawing.Size(187, 40);
             this.button3.TabIndex = 2;
             this.button3.Text = "Miktar Birimleri Listesi";
             this.button3.UseVisualStyleBackColor = true;
@@ -135,17 +124,6 @@
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
             // 
-            // bYeniMusteri
-            // 
-            this.bYeniMusteri.Location = new System.Drawing.Point(13, 353);
-            this.bYeniMusteri.Margin = new System.Windows.Forms.Padding(4);
-            this.bYeniMusteri.Name = "bYeniMusteri";
-            this.bYeniMusteri.Size = new System.Drawing.Size(163, 27);
-            this.bYeniMusteri.TabIndex = 5;
-            this.bYeniMusteri.Text = "Yeni Müşteri";
-            this.bYeniMusteri.UseVisualStyleBackColor = true;
-            this.bYeniMusteri.Click += new System.EventHandler(this.bYeniMusteri_Click);
-            // 
             // tBAra
             // 
             this.tBAra.Location = new System.Drawing.Point(355, 57);
@@ -165,14 +143,42 @@
             // 
             // bMusteriSil
             // 
+            this.bMusteriSil.Image = global::Program.Properties.Resources.images_30x30;
+            this.bMusteriSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bMusteriSil.Location = new System.Drawing.Point(184, 353);
             this.bMusteriSil.Margin = new System.Windows.Forms.Padding(4);
             this.bMusteriSil.Name = "bMusteriSil";
-            this.bMusteriSil.Size = new System.Drawing.Size(163, 27);
+            this.bMusteriSil.Size = new System.Drawing.Size(163, 40);
             this.bMusteriSil.TabIndex = 8;
             this.bMusteriSil.Text = "Müşteri Sil";
             this.bMusteriSil.UseVisualStyleBackColor = true;
             this.bMusteriSil.Click += new System.EventHandler(this.bMusteriSil_Click);
+            // 
+            // bYeniMusteri
+            // 
+            this.bYeniMusteri.Image = global::Program.Properties.Resources.add_30x30;
+            this.bYeniMusteri.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bYeniMusteri.Location = new System.Drawing.Point(13, 353);
+            this.bYeniMusteri.Margin = new System.Windows.Forms.Padding(4);
+            this.bYeniMusteri.Name = "bYeniMusteri";
+            this.bYeniMusteri.Size = new System.Drawing.Size(163, 40);
+            this.bYeniMusteri.TabIndex = 5;
+            this.bYeniMusteri.Text = "Yeni Müşteri";
+            this.bYeniMusteri.UseVisualStyleBackColor = true;
+            this.bYeniMusteri.Click += new System.EventHandler(this.bYeniMusteri_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Program.Properties.Resources.add_30x30;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(186, 427);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Yeni Ürün Ekle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormAna
             // 
