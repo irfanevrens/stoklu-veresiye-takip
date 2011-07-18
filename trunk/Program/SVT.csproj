@@ -109,6 +109,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UrunDetay.resx">
       <DependentUpon>UrunDetay.cs</DependentUpon>
@@ -133,6 +134,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\add_25x25.jpg" />
+    <None Include="Resources\images_25x25.jpg" />
+    <None Include="Resources\add_30x30.jpg" />
+    <None Include="Resources\images_30x30.jpg" />
     <Content Include="sqlite3.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

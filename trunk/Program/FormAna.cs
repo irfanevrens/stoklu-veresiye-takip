@@ -113,7 +113,7 @@ namespace Program
             {
                 MusterilerTablosu musterilerTablosu = new MusterilerTablosu();
                 VeresiyelerTablosu veresiyelerTablosu = new VeresiyelerTablosu();
-
+                TahsilatlarTablosu tahsilatlarTablosu = new TahsilatlarTablosu();
                 // @TODO tahsilatlar tablosu için sınıf yapılacak ve burada bir nesne oluşturulacak
 
                 ArrayList silinecekIndexs = new ArrayList();
@@ -126,7 +126,7 @@ namespace Program
                     if (musterilerTablosu.IsYokBorcu(aktifMusteriId))
                     {
                         silinecekIndexs.Add(dGWMusteriListesi.SelectedRows[i].Index);
-                        
+                        tahsilatlarTablosu.SilWhereMusteriId(aktifMusteriId); 
                         veresiyelerTablosu.SilWhereMusteriId(aktifMusteriId);
                         // @TODO burada müşteriye ait tahsilatların silinmesi için gerekli kod yazılacak
 
