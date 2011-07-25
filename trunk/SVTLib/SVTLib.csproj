@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ayarlar.cs" />
+    <Compile Include="Hareket.cs" />
     <Compile Include="Musteri.cs" />
     <Compile Include="MusterilerTablosu.cs" />
     <Compile Include="MiktarBirimi.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="TahsilatlarTablosu.cs" />
     <Compile Include="Urun.cs" />
     <Compile Include="UrunlerTablosu.cs" />
+    <Compile Include="Veresiye.cs" />
     <Compile Include="VeresiyelerTablosu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

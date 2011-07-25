@@ -51,7 +51,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 40);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Ürün Listesi";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -62,7 +62,7 @@
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(187, 40);
-            this.button3.TabIndex = 2;
+            this.button3.TabIndex = 7;
             this.button3.Text = "Miktar Birimleri Listesi";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -84,7 +84,13 @@
             this.dGWMusteriListesi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dGWMusteriListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGWMusteriListesi.Size = new System.Drawing.Size(529, 258);
-            this.dGWMusteriListesi.TabIndex = 3;
+            this.dGWMusteriListesi.TabIndex = 2;
+            this.dGWMusteriListesi.TabStop = false;
+            this.dGWMusteriListesi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGWMusteriListesi_CellClick);
+            this.dGWMusteriListesi.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGWMusteriListesi_CellContentDoubleClick);
+            this.dGWMusteriListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGWMusteriListesi_CellDoubleClick);
+            this.dGWMusteriListesi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dGWMusteriListesi_KeyDown);
+            this.dGWMusteriListesi.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dGWMusteriListesi_KeyUp);
             // 
             // menuStrip1
             // 
@@ -109,18 +115,18 @@
             // yeniMüşteriToolStripMenuItem
             // 
             this.yeniMüşteriToolStripMenuItem.Name = "yeniMüşteriToolStripMenuItem";
-            this.yeniMüşteriToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yeniMüşteriToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.yeniMüşteriToolStripMenuItem.Text = "Yeni Müşteri";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
             // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
             // 
@@ -129,8 +135,10 @@
             this.tBAra.Location = new System.Drawing.Point(355, 57);
             this.tBAra.Name = "tBAra";
             this.tBAra.Size = new System.Drawing.Size(187, 23);
-            this.tBAra.TabIndex = 6;
+            this.tBAra.TabIndex = 1;
             this.tBAra.TextChanged += new System.EventHandler(this.tBAra_TextChanged);
+            this.tBAra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBAra_KeyDown);
+            this.tBAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tBAra_KeyUp);
             // 
             // label1
             // 
@@ -149,7 +157,7 @@
             this.bMusteriSil.Margin = new System.Windows.Forms.Padding(4);
             this.bMusteriSil.Name = "bMusteriSil";
             this.bMusteriSil.Size = new System.Drawing.Size(163, 40);
-            this.bMusteriSil.TabIndex = 8;
+            this.bMusteriSil.TabIndex = 4;
             this.bMusteriSil.Text = "Müşteri Sil";
             this.bMusteriSil.UseVisualStyleBackColor = true;
             this.bMusteriSil.Click += new System.EventHandler(this.bMusteriSil_Click);
@@ -162,7 +170,7 @@
             this.bYeniMusteri.Margin = new System.Windows.Forms.Padding(4);
             this.bYeniMusteri.Name = "bYeniMusteri";
             this.bYeniMusteri.Size = new System.Drawing.Size(163, 40);
-            this.bYeniMusteri.TabIndex = 5;
+            this.bYeniMusteri.TabIndex = 3;
             this.bYeniMusteri.Text = "Yeni Müşteri";
             this.bYeniMusteri.UseVisualStyleBackColor = true;
             this.bYeniMusteri.Click += new System.EventHandler(this.bYeniMusteri_Click);
@@ -175,7 +183,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 40);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Yeni Ürün Ekle";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -196,6 +204,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -203,6 +212,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormAna_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormAna_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dGWMusteriListesi)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
