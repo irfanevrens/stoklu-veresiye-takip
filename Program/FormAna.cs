@@ -226,5 +226,94 @@ namespace Program
                 }
             }
         }
+
+        private void dGWMusteriListesi_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dGWMusteriListesi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dGWMusteriListesi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MusteriForm musteriForm = new MusteriForm();
+
+            musteriForm.MusteriId = Convert.ToInt32(dGWMusteriListesi.Rows[e.RowIndex].Cells[0].Value);
+
+            musteriForm.Show();
+        }
+
+        private void tBAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SeciliMusterininDetayiniAc();
+            }
+        }
+
+        private void dGWMusteriListesi_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void dGWMusteriListesi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.Handled = true;
+
+                SeciliMusterininDetayiniAc();
+            }
+        }
+
+        private void SeciliMusterininDetayiniAc()
+        {
+            int row_index = dGWMusteriListesi.SelectedRows[0].Index;
+
+            dGWMusteriListesi_CellDoubleClick(dGWMusteriListesi, new DataGridViewCellEventArgs(0, row_index));
+        }
+
+        private void FormAna_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
+
+        private void tBAra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                if (dGWMusteriListesi.SelectedRows.Count > 0)
+                {
+                    int toplam_kayit = dGWMusteriListesi.Rows.Count;
+                    int eski_index = dGWMusteriListesi.SelectedRows[0].Index;
+
+                    if (eski_index + 1 < toplam_kayit)
+                    {
+                        dGWMusteriListesi.Rows[eski_index].Selected = false;
+                        dGWMusteriListesi.Rows[eski_index + 1].Selected = true;
+                    }
+                }
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                if (dGWMusteriListesi.SelectedRows.Count > 0)
+                {
+                    int toplam_kayit = dGWMusteriListesi.Rows.Count;
+                    int eski_index = dGWMusteriListesi.SelectedRows[0].Index;
+
+                    if (eski_index > 0)
+                    {
+                        dGWMusteriListesi.Rows[eski_index].Selected = false;
+                        dGWMusteriListesi.Rows[eski_index - 1].Selected = true;
+                    }
+                }
+            }
+        }
     }
 }

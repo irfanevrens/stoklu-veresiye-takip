@@ -286,5 +286,70 @@ namespace SVTLib
                 conn.Close();
             }
         }
+
+        public ArrayList GetHareketler1(int musteriId)
+        {
+            SQLiteConnection conn = new SQLiteConnection();
+            conn.ConnectionString = connString;
+
+            string selectVeresiyelerSQL =
+"SELECT " +
+    "id, " +
+    "aciklama, " +
+    "tarih, " +
+    "miktar " +
+"FROM veresiyeler " + 
+"WHERE musteri_id = " + musteriId.ToString() + " " + 
+"ORDER BY tarih DESC";
+
+            string selectTahsilatlarSQL =
+"SELECT " +
+    "id, " +
+    "aciklama, " +
+    "tarih, " +
+    "miktar " +
+"FROM tahsilatlar " +
+"WHERE musteri_id = " + musteriId.ToString() + " " +
+"ORDER BY tarih DESC";
+
+            SQLiteCommand commandVeresiyeler = new SQLiteCommand(selectVeresiyelerSQL, conn);
+            SQLiteCommand commandTahsilatlar = new SQLiteCommand(selectTahsilatlarSQL, conn);
+
+            SQLiteDataReader readerVeresiyeler;
+            SQLiteDataReader readerTahsilatlar;
+
+            ArrayList arrayList = new ArrayList();
+
+            try
+            {
+                conn.Open();
+
+                readerVeresiyeler = commandVeresiyeler.ExecuteReader();
+                readerTahsilatlar = commandTahsilatlar.ExecuteReader();
+
+                while (readerVeresiyeler.Read())
+                {
+                    arrayList.Add(new Hareket(readerVeresiyeler.GetInt32(0), readerVeresiyeler.GetString(1), readerVeresiyeler.GetDateTime(2), readerVeresiyeler.GetDecimal(3), Convert.ToDecimal(0), HareketTurleri.Veresiye));
+                }
+
+                while (readerTahsilatlar.Read())
+                {
+                    arrayList.Add(new Hareket(readerTahsilatlar.GetInt32(0), readerTahsilatlar.GetString(1), readerTahsilatlar.GetDateTime(2), Convert.ToDecimal(0), readerTahsilatlar.GetDecimal(3), HareketTurleri.Tahsilat));
+                }
+
+                readerVeresiyeler.Close();
+                readerTahsilatlar.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return arrayList;
+        }
     }
 }
